@@ -19,7 +19,7 @@ classes = {"Ingredient": Ingredient, "Dislikes": Dislikes, "Favorites": Favorite
            "Allergies": Allergies, "Meal": Meal, "Recipe_Ingredient": Recipe_Ingredient, "User": User}
 
 
-class HBNBCommand(cmd.Cmd):
+class DietBUDCommand(cmd.Cmd):
     """ DietBUD console """
     prompt = '(DietBUD) '
 
