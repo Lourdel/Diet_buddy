@@ -1,0 +1,146 @@
+/* CSS for the entire page */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* CSS for the header */
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  .left-img {
+    height: 80px;
+  }
+  
+  .upper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn, .log {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .btn:hover, .log:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* CSS for the main section */
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+  
+  .srch {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .srch:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* CSS for each item in the gallery */
+  section > section {
+    margin: 10px;
+  }
+  
+  .mage {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .lke, .plus {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  /* CSS for the first item */
+  .img1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  }
+  
+  .img1:hover {
+    transform: scale(1.05);
+  }
+  
+  .led {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0px;
+  }
+  
+  /* CSS for the second item */
+  .img2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  }
+  
+  .img2:hover {
+    transform: scale(1.05);
+  }
+  
+  /* CSS for the third item */
+  .img3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  }
+  
+  .img3:hover {
+    transform: scale(1.05);
+  }
+  
+  /* CSS for the forth item */
+  .img4 {
+    display: flex
+  
