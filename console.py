@@ -3,7 +3,7 @@
 """Module implements command line interface for manipulating objects"""
 
 from models.base_model import BaseModel
-from models.user import User
+from models.recipe import Recipe
 from models.ingredient import Ingredient
 from models.meal import Meal
 from models.engine.file_storage import FileStorage
@@ -13,7 +13,7 @@ import models
 from colorama import init, Fore, Back, Style
 import random
 
-classes = {"User": User, "Ingredient": Ingredient, "Meal": Meal}
+classes = {"Recipe": Recipe, "Ingredient": Ingredient, "Meal": Meal}
 
 class DietBUDCommand(cmd.Cmd):
     """ DietBUD console """
@@ -34,7 +34,7 @@ class DietBUDCommand(cmd.Cmd):
         quit()
 
     def do_help(self, args):
-        """renders help to user"""
+        """renders help to recipe"""
 
     def preloop(self):
         print(Fore.LIGHTBLUE_EX + "\nHello! Welcome to DietBUD V_1.0\n" +

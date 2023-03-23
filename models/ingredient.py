@@ -1,25 +1,24 @@
 #!/usr/bin/python3
 """Sub class ingredients that inherits from the base class"""
-
-from sqlalchemy import Column, String, Float, ForeignKey
+import models
+from sqlalchemy import Column, String, Float, Integer, ForeignKey, JSON
 from sqlalchemy.orm import relationship
 from models.base_model import BaseModel, Base
+from os import getenv
+
+if models.storage_env == "db":
+    class Ingredient(BaseModel, Base):
+        __tablename__ = 'ingredients'
+        name = Column(String(100), nullable=False)
+        conditions = Column(JSON)
+        nutrition = Column(JSON)
 
 
-class Ingredient(BaseModel, Base):
-    __tablename__ = 'ingredients'
+else:
+    class Ingredient:
+        def __init__(self, *args, **kwargs):
+            self.id = str(uuid4())
+            self.name = kwargs.get('name', '')
+            self.conditions = kwargs.get('conditions', [])
+            self.nutrition = kwargs.get('nutrition', {})   
 
-    name = Column(String(100), nullable=False)
-    quantity = Column(Float, nullable=False)
-    unit = Column(String(20), nullable=False)
-    calories = Column(Float, nullable=False)
-    meal_id = Column(String(60), ForeignKey('meals.id'), nullable=False)
-    meal = relationship('Meal', back_populates='ingredients')
-
-    def __init__(self, name, quantity, unit, calories, meal_id, **kwargs):
-        super().__init__(**kwargs)
-        self.name = name
-        self.quantity = quantity
-        self.unit = unit
-        self.calories = calories
-        self.meal_id = meal_id

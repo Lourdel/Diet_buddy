@@ -1,0 +1,10 @@
+# jinja2 template fro iterating through meals
+
+{% for meal in meals %}
+    <div>
+        <h3>{{ meal.name }}</h3>
+        <p>{{ meal.description }}</p>
+        <img src="{{ meal.image_url }}">
+    </div>
+{% endfor %}
+

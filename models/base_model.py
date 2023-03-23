@@ -6,6 +6,7 @@ from datetime import datetime
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 import models
+from os import getenv
 
 if models.storage_env == "db":
     Base = declarative_base()

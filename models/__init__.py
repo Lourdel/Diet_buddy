@@ -1,5 +1,5 @@
 from os import getenv
-storage_env = getenv("HB_STORAGE")
+storage_env = getenv("DietBUD_STORAGE")
 
 if storage_env == "db":
     from models.engine.db_storage import DB_Storage

@@ -3,13 +3,13 @@
 """Module implements JSON filestorage engine"""
 
 from models.base_model import BaseModel
-from models.user import User
+from models.recipe import Recipe
 from models.ingredient import Ingredient
 from models.meal import Meal
 from datetime import datetime
 import json
 
-classes = {"User": User, "Ingredient": Ingredient, "Meal": Meal}
+classes = {"Recipe": Recipe, "Ingredient": Ingredient, "Meal": Meal}
 
 
 class FileStorage:
@@ -49,6 +49,12 @@ class FileStorage:
         with open(self.__file, "w") as f:
             json.dump(all_objects, f)
 
+    def new(self, obj):
+        """sets in __objects the obj with key <obj class name>.id"""
+        if obj is not None:
+            key = obj.__class__.__name__ + "." + obj.id
+            self.__objects[key] = obj
+    
     def reload(self):
         try:
             all_objects = []
@@ -85,3 +91,22 @@ class FileStorage:
                 self.save()
         except Exception:
             pass
+
+    def close(self):
+        """call reload() method for deserializing the JSON file to objects"""
+        self.reload()
+
+    def count(self, cls=None):
+        """
+        count the number of objects in storage
+        """
+        all_class = classes.values()
+
+        if not cls:
+            count = 0
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
+        else:
+            count = len(models.storage.all(cls).values())
+
+        return count

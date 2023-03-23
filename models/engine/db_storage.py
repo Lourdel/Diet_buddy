@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 
 """Module implements database storage"""
-
+import models
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.base_model import BaseModel
-from models.user import User
+from models.recipe import Recipe
 from models.ingredient import Ingredient
 from models.meal import Meal
 from models.base_model import Base
 from os import getenv
 
-classes = {"User": User, "Ingredient": Ingredient, "Meal": Meal}
+classes = {"Recipe": Recipe, "Ingredient": Ingredient, "Meal": Meal}
 
 
 class DB_Storage:
@@ -39,11 +39,11 @@ class DB_Storage:
         """save to database"""
         self.__session.commit()
 
-    def all(self, cls=None):
+    def all(self, cls=None, **kwargs):
         """retrieves objects from storage"""
         if cls:
             objs = {}
-            class_objs = self.__session.query(classes[cls]).all()
+            class_objs = self.__session.query(classes[cls]).filter_by(**kwargs).all()
             for obj in class_objs:
                 key = obj.__class__.__name__ + "." + obj.id
                 objs[key] = obj
@@ -52,7 +52,7 @@ class DB_Storage:
         all_objects = {}
 
         for cls in classes:
-            objs = self.__session.query(classes[cls]).all()
+            objs = self.__session.query(classes[cls]).filter_by(**kwargs).all()
             for obj in objs:
                 key = obj.__class__.__name__ + "." + obj.id
                 all_objects[key] = obj
@@ -93,3 +93,22 @@ class DB_Storage:
         if cls:
             return len(self.all(cls))
         return len(self.all())
+
+    def delete_all(self):
+        """Deletes all data from the database"""
+        Base.metadata.drop_all(self.__engine)
+
+    def get_by_id(self, cls, id):
+        """Gets an object by its ID"""
+        obj = self.__session.query(cls).filter_by(id=id).first()
+        return obj
+
+    def get_by_ids(self, cls, ids):
+        """Gets a list of objects by a list of IDs"""
+        objs = self.__session.query(cls).filter(cls.id.in_(ids)).all()
+        return objs
+
+    def get_by_filter(self, cls, **kwargs):
+        """Gets a list of objects by a filter criteria"""
+        objs = self.__session.query(cls).filter_by(**kwargs).all()
+        return objs
