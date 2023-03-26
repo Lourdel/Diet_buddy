@@ -1,42 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Recipe Search</title>
+	<title>Search Recipes</title>
 </head>
 <body>
-	<h1>Recipe Search</h1>
-	<form action="/" method="POST">
-		<label for="query">Search for a recipe:</label>
-		<input type="text" name="query" id="query">
-		<button type="submit">Search</button>
-	</form>
-	{% if results %}
-		{% for result in results %}
-			<h2>{{ result["recipe"]["label"] }}</h2>
-			<img src="{{ result["recipe"]["image"] }}" alt="Recipe Image">
-			<p>{{ result["recipe"]["source"] }}</p>
-			<h3>Ingredients:</h3>
-			<ul>
-				{% for ingredient in result["recipe"]["ingredients"] %}
-					<li>{{ ingredient["text"] }}</li>
-				{% endfor %}
-			</ul>
-			<h3>Nutritional Facts per serving:</h3>
-			<ul>
-				<li>Calories: {{ result["calories"] }} kcal</li>
-				<li>Carbs: {{ result["carbs"] }} g</li>
-				<li>Fat: {{ result["fat"] }} g</li>
-				<li>Protein: {{ result["protein"] }} g</li>
-			</ul>
-			<h3>Health Conditions:</h3>
-			<ul>
-				{% for condition in result["conditions"] %}
-					<li>{{ condition }}</li>
-				{% endfor %}
-			</ul>
-			<hr>
-		{% endfor %}
-	{% endif %}
+	<form action="{{ url_for('search') }}" method="GET">
+      		<input type="text" name="query" placeholder="Search query">
+      		<button type="submit">Search</button>
+    	</form>
+
+	{% block content %}
+
+	{% endblock content %}
 </body>
 </html>
 
