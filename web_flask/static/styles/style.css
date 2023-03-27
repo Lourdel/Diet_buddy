@@ -1,0 +1,152 @@
+* {
+  padding: 5px;
+  margin: 0px;
+  font-size: 14px;
+}
+body {
+font-family: Arial, Helvetica, sans-serif;
+background-color: rgb(239, 239, 240);
+overflow: scroll;
+}
+/* CSS for the header */
+.head {
+display: flex;
+z-index: 100;
+align-items: flex-start;
+position: fixed;
+background-color: #4CAF50;
+top: 0%;
+left: 0%;
+right: 0%;
+
+}
+
+.left-img {
+height: 50px;
+border-radius: 25px;
+}
+
+.lower {
+display: flex;
+justify-content: space-between;
+margin-left: 50%;
+margin-top: 0%;
+}
+
+#meals{
+background-color: #4CAF50;
+border: none;
+color: rgb(255, 255, 255);
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 18px;
+margin: 4px 15px;
+cursor: pointer;
+border-radius: 10px;
+width: 120px;
+font-weight: 200;
+}
+
+#drinks{
+  background-color: #4CAF50;
+border: none;
+color: rgb(255, 255, 255);
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 18px;
+margin: 4px 15px;
+cursor: pointer;
+border-radius: 10px;
+width: 120px;
+font-weight: 200;
+}
+
+#meal_plan{
+  background-color: #4CAF50;
+border: none;
+color: rgb(255, 255, 255);
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 18px;
+font-weight: 200;
+margin: 4px 15px;
+cursor: pointer;
+border-radius: 10px;
+width:120px;
+}
+
+.btn:hover, .log:hover {
+background-color: #3e8e41;
+}
+
+/*Class for the search section*/
+.search {
+margin-left: 40%;
+margin-top: 80px;
+width: 100px;
+}
+input[type="text"] {
+width: 300px;
+font-size: 16px;
+margin-left: 10px;
+padding: 10px;
+border-radius: 3px;
+border: 1px solid grey;
+
+}
+
+/* CSS for the main section */
+.main {
+display:flex;
+flex-wrap: wrap;
+justify-content:space-between;
+margin: 10px;
+}
+.card {
+width: 30%;
+border-bottom: 60px;
+margin-bottom: 40px;
+}
+
+
+.mage {
+width: 320px;
+height: 200px;
+border-radius: 10px;
+}
+
+.lke {
+width: 20px;
+height: 20px;
+margin: 5px;
+border-radius: 60px;
+}
+
+/* CSS for the first item */
+.inner {
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 7px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.inner:hover {
+transform: scale(1.05);
+}
+
+.led {
+font-size: 17px;
+font-weight: bold;
+margin: 3px 0px;
+}
+
+/* CSS for the second item */
