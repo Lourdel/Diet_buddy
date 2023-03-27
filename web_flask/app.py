@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Flask module to get data from the API and define routes"""
 
 from flask import Flask, render_template, request, url_for
 import requests
@@ -8,11 +9,12 @@ app.debug = True
 
 @app.route('/',strict_slashes=False)
 def index():
+    """method to display the default route"""
     return render_template('index.html')
 
 @app.route('/search',strict_slashes=False)
 def search():
-    # get the user's query from the form data
+    """Method to get the user's query"""
     query = request.args.get('query')
 
     APP_ID = "da2277dc"
@@ -22,7 +24,7 @@ def search():
         "q": query,
         "app_id": APP_ID,
         "app_key": APP_KEY,
-        "to": 5,  # return only the first 5 results
+        "to": 5,
     }
     response = requests.get(BASE_URL, params=params)
     data = response.json()
@@ -31,8 +33,6 @@ def search():
         recipe = result["recipe"]
         label = recipe["label"]
         image = recipe["image"]
-        #url = recipe["url"]
-        #source = recipe["source"]
         ingredients = [ingredient["text"] for ingredient in recipe["ingredients"]]
         nutrients = recipe["totalNutrients"]
         servings = recipe["yield"]
@@ -45,8 +45,6 @@ def search():
         results.append({
             'label': label,
             'image': image,
-            #'url': url,
-            #'source': source,
             'ingredients': ingredients,
             'calories': calories,
             'carbs': carbs,
