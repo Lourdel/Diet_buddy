@@ -5,10 +5,32 @@
 }
 body {
 font-family: Arial, Helvetica, sans-serif;
-background-color: rgb(239, 239, 240);
+background-color: rgb(0, 0, 0);
 overflow: scroll;
 }
 /* CSS for the header */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+}
+
+.left-text {
+  flex: 1;
+  margin: 0 20px;
+  color: white;
+  text-align: justify;
+}
+.right-text {
+  flex: 1;
+  color: white;
+  margin: 0 20px;
+  text-align: justify;
+}
+
+
 .head {
 display: flex;
 z-index: 100;

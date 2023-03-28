@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>Search Results for "{{ query }}"</h1>
+	{% if results %}
+		{% for result in results %}
+			<h2>{{ result.label }}</h2>
+			{% if result.source %}
+				<p>From {{ result.source }}</p>
+			{% endif %}
+			{% if result.health_labels %}
+				<p>Health Labels: {{ result.health_labels }}</p>
+			{% endif %}
+			{% if result.ingredients %}
+				<h3>Ingredients:</h3>
+				<ul>
+					{% for ingredient in result.ingredients %}
+						<li>{{ ingredient }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if result.calories %}
+				<p>Calories per Serving: {{ result.calories|round(2) }}</p>
+			{% endif %}
+			{% if result.carbs %}
+				<p>Carbs per Serving: {{ result.carbs|round(2) }}</p>
+			{% endif %}
+			{% if result.fat %}
+				<p>Fat per Serving: {{ result.fat|round(2) }}</p>
+			{% endif %}
+			{% if result.protein %}
+				<p>Protein per Serving: {{ result.protein|round(2) }}</p>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		<p>No results found.</p>
+	{% endif %}
+{% endblock %}
