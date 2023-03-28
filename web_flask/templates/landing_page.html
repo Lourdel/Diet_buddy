@@ -19,7 +19,7 @@
 			<ul class="navbar">
 				<li><a href="#home">Home</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#menu">Menu</a></li>
+				
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</header>
@@ -43,7 +43,16 @@
 					 of its people. <br>Whether you're a seasoned chef or a curious home cook,
 					the vast and diverse world of recipes can be a truly enriching and 
 					fulfilling experience.<br></p>
-				<a href=# class="btn">Explore</a>
+				<form action="{{ url_for('search') }}" method="GET">
+					<input type="text" name="query" placeholder="Search query" style="font-size: 19px;">
+					<button type="submit" class="btn">Explore</button>
+				</form>
+	  
+		  {% block content %}
+	  
+		  {% endblock content %}
+
+			
 			</div>
 		<section>
 			<div class="home-img">
@@ -67,7 +76,6 @@
 					Our team consists of Najjib Mutyaba, Lourdel Kigudde, and Ian Kitembe - food enthusiasts who are passionate about sharing their love of good food with others. We are constantly updating our catalog of recipes to include a wide range of options, from healthy meals to decadent desserts and cocktails.
 					We believe that food should be enjoyed and celebrated, and we strive to create a community where people can come together to share their love of food and healthy living. We value your feedback and suggestions, so please don't hesitate to reach out to us with any comments or questions.
 					Thank you for choosing Dietbud as your resource for delicious and healthy recipes!</p>
-				<a href="#" class="btn">Today's Menu</a>
 			</div>
 
 		</section>

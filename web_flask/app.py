@@ -24,7 +24,7 @@ def search():
         "q": query,
         "app_id": APP_ID,
         "app_key": APP_KEY,
-        "to": 5,
+        "to": 20,
     }
     response = requests.get(BASE_URL, params=params)
     data = response.json()
