@@ -10,7 +10,7 @@ app.debug = True
 @app.route('/',strict_slashes=False)
 def index():
     """method to display the default route"""
-    return render_template('index.html')
+    return render_template('gallery.html')
 
 @app.route('/search',strict_slashes=False)
 def search():
@@ -52,8 +52,7 @@ def search():
             'protein': protein,
             'health_labels': health_labels
         })
-
-    return render_template('results.html', query=query, results=results)
+        return render_template('results.html', query=query, results=results)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")
