@@ -32,13 +32,24 @@
 
     <!--Create first search section-->
     <section class="search">
+	<form action="{{ url_for('search') }}" method="GET">
         <!--<button class="srch">search</button>-->
-        <input type="text" placeholder="SEARCH">
+        <input type="text" name="query" placeholder="SEARCH">
+	<button type="submit">Search</button>
+	</form>
     </section>
 <!--Creating the main part of our page-->
     <main class="main">
             <!--Create sub sections for each item representation-->
             <section class="card">
+                <div class="inner">
+			{% block content %}
+
+			{% endblock content %}
+                </div>
+            </section>
+
+	    <!--section class="card"----
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M71c478f95f69a4d8ac579c82e7ca11241677997752242" alt="beef steak" class="mage"/>
                     <h4 class="led">Grilled Beef Steak</h4>
@@ -47,7 +58,7 @@
                     </button>
                 </div>
             </section>
-            <!--Second Sub-section-->
+	    Second Sub-section-
             <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M6b5b0f1b74fb8e1c1e3b2fdd588d57b11677993749091" alt="Fried Chicken" class="mage"/>
@@ -57,7 +68,7 @@
                     </button>
                 </div>
             </section>
-            <!--Third sub-section-->
+            <!--<!--Third sub-section---->
             <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M67d600f20e3118d27d7a5688946f70d21678687058233" alt="Pilao" class="mage"/>
@@ -67,7 +78,7 @@
                     </button>
                 </div>
             </section>
-             <!--Forth sub-section-->
+             <!--<--Forth sub-section---->
              <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/Mde288546eccd71fe5722f058fee474891677996078714" alt="Chicken Bowl" class="mage"/>
@@ -77,7 +88,7 @@
                     </button>
                 </div>
             </section>
-            <!--Fifth sub-section-->
+            <!--<--Fifth sub-section---->
             <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M9f2b1f3c474a70180ac436945b14f9621678687732948" alt="Rolex" class="mage"/>
@@ -87,7 +98,7 @@
                     </button>
                 </div>
             </section>
-            <!--Fifth sub-section-->
+            <!--<--Fifth sub-section---->
             <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/Mecd4cea79f7c6b2928ed2fe7d58a5dd01677995804082" alt="Chicken Cuts" class="mage"/>
@@ -97,7 +108,7 @@
                     </button>
                 </div>
             </section>
-             <!--Seventh sub-section-->
+             <!--<--Seventh sub-section---->
              <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/Mda313330f33e8fb32c79081966de67df1677996888222" alt="muffins" class="mage"/>
@@ -107,7 +118,7 @@
                     </button>
                 </div>
             </section>
-             <!--Eighth sub-section-->
+             <!--<--Eighth sub-section---->
              <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/Md4c18cdf8dd71044935e1ccadbf8b2731677996667685" alt="Cream Cake Bread" class="mage"/>
@@ -117,7 +128,7 @@
                     </button>
                 </div>
             </section>
-            <!--Nineth sub-section-->
+            <!--<--Nineth sub-section---->
             <section class="card">
                 <div class="inner">
                     <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M588193ace7d63df6f5ea2cfcb8cef4cb1677997088145" alt="Vanilla Cookies" class="mage"/>
@@ -126,7 +137,7 @@
                         <img src="https://assets.mockflow.com/app/wireframepro/svg/default/like%203.svg" class="lke" alt="like"/>
                     </button>
                 </div>
-            </section>
+	    </section>-->
     </main>
 </body>
 </html>
