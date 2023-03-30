@@ -3,28 +3,22 @@
 
 from flask import Flask, render_template, request, url_for
 import requests
+from functools import lru_cache
 
 app = Flask(__name__)
 app.debug = True
 
-@app.route('/',strict_slashes=False)
-def index():
-    """method to display the default route"""
-    return render_template('landing_page.html')
+APP_ID = "da2277dc"
+APP_KEY = "aee9b7f82b3891e972a8071b1bc6855b"
+BASE_URL = "https://api.edamam.com/search"
 
-@app.route('/search',strict_slashes=False)
-def search():
-    """Method to get the user's query"""
-    query = request.args.get('query')
-
-    APP_ID = "da2277dc"
-    APP_KEY = "aee9b7f82b3891e972a8071b1bc6855b"
-    BASE_URL = "https://api.edamam.com/search"
+@lru_cache(maxsize=128)
+def get_data(query):
     params = {
         "q": query,
         "app_id": APP_ID,
         "app_key": APP_KEY,
-        "to": 5,
+        "to": 6,
     }
     response = requests.get(BASE_URL, params=params)
     data = response.json()
@@ -41,7 +35,7 @@ def search():
         fat = nutrients["FAT"]["quantity"] / servings
         protein = nutrients["PROCNT"]["quantity"] / servings
         health_labels = recipe['healthLabels']
-        
+
         results.append({
             'label': label,
             'image': image,
@@ -52,7 +46,33 @@ def search():
             'protein': protein,
             'health_labels': health_labels
         })
-        return render_template('results.html', query=query, results=results)
+    return results
+
+@app.route('/',strict_slashes=False)
+def index():
+    """method to display the default route"""
+    return render_template('landing_page.html')
+
+@app.route('/simple_meals',strict_slashes=False)
+def Simple_meals():
+    """Method to get the user's query"""
+    query = "1 hour"
+    results = get_data(query)
+
+    return render_template('gallery.html', query=query, results=results)
+
+@app.route('/cocktails')
+def cocktails():
+    """Method to query for cocktails"""
+    query = "cocktails"
+    results = get_data(query)
+    return render_template('gallery.html', query=query, results=results)
+
+@app.route('/search')
+def search():
+    query = request.args.get('query')
+    results = get_data(query)
+    return render_template('gallery.html', query=query, results=results)
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port="5000")
+    app.run(host="0.0.0.0", port="5000")
