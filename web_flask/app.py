@@ -18,7 +18,7 @@ def get_data(query):
         "q": query,
         "app_id": APP_ID,
         "app_key": APP_KEY,
-        "to": 6,
+        "to": 20,
     }
     response = requests.get(BASE_URL, params=params)
     data = response.json()
