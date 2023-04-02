@@ -8,54 +8,49 @@
         <meta name="description" content="Yummy Food Gallery">
         <meta name="keywords" content="yummy", "Food", "Gallery">
         <link rel="stylesheet" href="../static/styles/smv.css" />
-
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <!--Create a body section for our main page with the body tag-->
 <body>
     <!--Started by creating a header section-->
-    <header class="head">
-        <!--Create divs for our different parts of the header-->
-        <div class="left">
-            <img src="https://assets.mockflow.com/app/wireframepro/company/C263cde84d8cb40c7b8effc93e78c88e0/projects/Mar6eCn1Gh/images/thumbnails/M4bef64cacbf165c94886cd524315a3e51678604313140" alt="logo
-            " class="left-img"/>
+    <header>
+			<a href="#" class="logo">dietbud</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
 
-        </div>
-        <!--Create sections for our different header buttons-->
-        <section class="upper">
-            
-            <button class="btn">SIGN IN</button>
-            <button class="log">SIGN UP</button>
-            
-        </section>
-        <section class="lower">
-            
-            <button class="btn">Meals</button>
-            <button class="log">Drinks</button>
-            <button class="log">Meal Plans</button>
-            
-        </section>
-    </header>
+			<ul class="navbar">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</header>
     <main>
         <section class="inner">
-            <h1 font-size="30px">Rolex</h1>
+            <h2 id="rol">Rolex</h2>
             <img src="https://th.bing.com/th/id/R.a5425de131a8aa132cecf6284e553d57?rik=PKL%2f04AxvRalUQ&pid=ImgRaw&r=0" alt="image" class="rolex">
-            <img src="https://www.healthymealplans.com/static/images/heart_glow.png" alt="image" class="like">
         </section>
-        <section>
-            <ul class="horizontal-list">
-                <li inputmode="number">SERVINGS</li>
-                <li>CALORIES</li>
-                <li>PREP</li>
-                <li>COOK</li>
-              </ul>
-            <h4>QUICK FIX, EAT HOT, TASTY</h4>
+        <section class="servings">
+                <div id="servings">SERVINGS:</div>
+                <div id="servings2">4</div>
+                <div id="calories">CALORIES:</div>
+                <div id="calories2">200</div>
+                <div id="prep">PREP:</div>
+                <div id="prep2">10 min</div>
+                <div id="cook">COOK:</div>
+                <div id="cook2">15 min</div>
+        </section>
+        <section class="quick">
+            <h4 id="fix">QUICK FIX, EAT HOT, TASTY</h4>
             <p>
                     A rolex is simillar to a vegetable omelet. Cabbage, tomato, and onion are cooked with eggs and then rolled into a chapati, a tortilla-like unleavened flatbred.
             </p>
         </section>
-        <section>
+        <section class="table">
+          <h1 class="ing">INGREDIENTS</h1>
             <table>
-                <thead>INGREDIENTS</thead>
+                <thead ></thead>
                 <tbody>
                   <tr>
                     <td>Eggs</td>
@@ -85,8 +80,8 @@
               </table>
               
         </section>
-        <section>
-          <h>INSTRUCTIONS</h3>
+        <section class="inst">
+          <h3 id="ing">INSTRUCTIONS</h3>
               <ol>
                   <li>Chop the onions and tomatoes into small pieces.</li>
                   <li>Heat oil in a pan and add the onions and tomatoes.</li>
