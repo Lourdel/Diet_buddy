@@ -136,4 +136,70 @@ section {
     margin: auto;
 }
 
+/*Gallery*/
+/*Class for the search section*/
+.search {
+    margin-left: 27%;
+    margin-top: 80px;
+    width: 200px;
+    }
+    input[type="text"] {
+    width: 500px;
+    height: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    
+    
+    }
+    
+    /* CSS for the main section */
+    .main {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin: 10px;
+    }
+    .card {
+    width: 30%;
+    border-bottom: 60px;
+    margin-bottom: 40px;
+    }
+    
+    
+    .mage {
+    width: 320px;
+    height: 200px;
+    border-radius: 10px;
+    }
+    
+    .lke {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 60px;
+    }
+    
+    /* CSS for the first item */
+    .inner {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+    
+    .inner:hover {
+    transform: scale(1.05);
+    }
+    
+    .led {
+    font-size: 17px;
+    font-weight: bold;
+    }
+    
 

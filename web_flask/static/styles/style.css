@@ -1,42 +1,20 @@
 * {
   padding: 5px;
-  margin: 0px;cd
+  margin: 0;
+  box-sizing: border-box;
   font-size: 14px;
 }
 body {
 font-family: Arial, Helvetica, sans-serif;
-background-color: #eefff1;
 overflow: scroll;
 }
 /* CSS for the header */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- background-color: #c2f5cb;
-  padding: 20px;
-}
-
-.left-text {
-  flex: 1;
-  margin: 0 20px;
-  color: white;
-  text-align: justify;
-}
-.right-text {
-  flex: 1;
-  color: white;
-  margin: 0 20px;
-  text-align: justify;
-}
-
-
 .head {
 display: flex;
 z-index: 100;
 align-items: flex-start;
 position: fixed;
-background-color: #4CAF50;
+background-color: #f1f1f1;
 top: 0%;
 left: 0%;
 right: 0%;
@@ -44,63 +22,34 @@ right: 0%;
 }
 
 .left-img {
-height: 50px;
-border-radius: 25px;
+height: 80px;
+}
+
+.upper {
+display: flex;
+margin-left: 77%;
+margin-top: 0%;
 }
 
 .lower {
 display: flex;
 justify-content: space-between;
-margin-left: 50%;
-margin-top: 0%;
+margin-left: -20%;
+margin-top: 5%;
 }
 
-#meals{
+.btn, .log {
 background-color: #4CAF50;
 border: none;
-color: rgb(255, 255, 255);
+color: white;
 padding: 10px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
-font-size: 18px;
-margin: 4px 15px;
+font-size: 16px;
+margin: 4px 2px;
 cursor: pointer;
 border-radius: 10px;
-width: 120px;
-font-weight: 200;
-}
-
-#drinks{
-  background-color: #4CAF50;
-border: none;
-color: rgb(255, 255, 255);
-padding: 10px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 18px;
-margin: 4px 15px;
-cursor: pointer;
-border-radius: 10px;
-width: 120px;
-font-weight: 200;
-}
-
-#meal_plan{
-  background-color: #4CAF50;
-border: none;
-color: rgb(255, 255, 255);
-padding: 10px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 18px;
-font-weight: 200;
-margin: 4px 15px;
-cursor: pointer;
-border-radius: 10px;
-width:120px;
 }
 
 .btn:hover, .log:hover {
@@ -109,67 +58,216 @@ background-color: #3e8e41;
 
 /*Class for the search section*/
 .search {
-margin-left: 27%;
-margin-top: 80px;
-width: 200px;
+margin-top: -5%;
 }
 input[type="text"] {
-width: 500px;
-height: 10px;
+width: 300px;
 font-size: 16px;
 margin-left: 10px;
 padding: 10px;
 border-radius: 3px;
 border: 1px solid grey;
 
-
 }
 
 /* CSS for the main section */
 .main {
-display:flex;
+display: flex;
 flex-wrap: wrap;
-justify-content:space-between;
-margin: 10px;
+justify-content: flex-start;
+margin-top: 15%;
+align-items: flex-start;
+height: 100%;
+width: 100%;
 }
 .card {
 width: 30%;
-border-bottom: 60px;
-margin-bottom: 40px;
+height: 25rem;
+background-color: grey;
+position: relative;
+display: inline-block;
+border-radius: 2px;
 }
 
-
-.mage {
-width: 320px;
-height: 200px;
+.srch {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin-bottom: 10px;
+cursor: pointer;
 border-radius: 10px;
 }
 
-.lke {
-width: 20px;
-height: 20px;
+.srch:hover {
+background-color: #3e8e41;
+}
+
+/* CSS for each item in the gallery */
+section > section {
+margin: 10px;
+}
+
+.mage {
+width: 300px;
+height: 200px;
+object-fit: cover;
+}
+
+.lke, .plus {
+width: 30px;
+height: 30px;
 margin: 5px;
-border-radius: 60px;
+cursor: pointer;
 }
 
 /* CSS for the first item */
-.inner {
+.img1 {
 display: flex;
-flex-direction:column;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: #ffffff;
-border-radius: 7px;
+background-color: #f9f9f9;
+border-radius: 10px;
 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
-.inner:hover {
+.img1:hover {
 transform: scale(1.05);
 }
 
 .led {
-font-size: 17px;
+font-size: 22px;
 font-weight: bold;
+margin: 10px 0px;
 }
 
 /* CSS for the second item */
+.img2 {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img2:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the third item */
+.img3 {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img3:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the forth item */
+.img4 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img4:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the fifth item */
+.img5 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img5:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the sixth item */
+.img6 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img6:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the seventh item */
+.img7 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img7:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the eighth item */
+.img4 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img8:hover {
+transform: scale(1.05);
+}
+
+/* CSS for the nineth item */
+.img9 {
+display: flex
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.img9:hover {
+transform: scale(1.05);
+}
