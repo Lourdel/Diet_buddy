@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Flask module to get data from the API and define routes"""
 
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, abort
 import requests
 from functools import lru_cache
 
@@ -27,6 +27,7 @@ def get_data(query):
         recipe = result["recipe"]
         label = recipe["label"]
         image = recipe["image"]
+        uri = recipe["uri"].split("_")[-1]
         ingredients = [ingredient["text"] for ingredient in recipe["ingredients"]]
         nutrients = recipe["totalNutrients"]
         servings = recipe["yield"]
@@ -35,6 +36,7 @@ def get_data(query):
         fat = nutrients["FAT"]["quantity"] / servings
         protein = nutrients["PROCNT"]["quantity"] / servings
         health_labels = recipe['healthLabels']
+        cook_time = recipe['totalTime']
 
         results.append({
             'label': label,
@@ -44,7 +46,11 @@ def get_data(query):
             'carbs': carbs,
             'fat': fat,
             'protein': protein,
-            'health_labels': health_labels
+            'health_labels': health_labels,
+            'uri': uri,
+            'cook_time': cook_time,
+            'servings': servings,
+            'nutrients': nutrients
         })
     return results
 
@@ -53,6 +59,11 @@ def index():
     """method to display the default route"""
     return render_template('landing_page.html')
 
+@app.route('/about',strict_slashes=False)
+def About():
+    """method to display the about route"""
+    return render_template('about.html')
+
 @app.route('/simple_meals',strict_slashes=False)
 def Simple_meals():
     """Method to get the user's query"""
@@ -60,6 +71,19 @@ def Simple_meals():
     results = get_data(query)
 
     return render_template('gallery.html', query=query, results=results)
+
+@app.route('/meals/<string:meal_id>', strict_slashes=False)
+def meal_view(meal_id):
+    """Method to display the details of a single meal"""
+    results = get_data("1 hour")
+    meal = None
+    for m in results:
+        if m['uri'].split("_")[-1] == str(meal_id):
+            meal = m
+            break
+    if not meal:
+        abort(404)
+    return render_template('smv.html', results=meal)
 
 @app.route('/cocktails')
 def cocktails():
@@ -70,9 +94,24 @@ def cocktails():
 
 @app.route('/search')
 def search():
+    """Method to query for anything"""
     query = request.args.get('query')
     results = get_data(query)
     return render_template('gallery.html', query=query, results=results)
-
+"""
+@app.route('/search/<string:meal_id>', strict_slashes=False)
+def search_meal(meal_id):
+    '''Method to display the details of a single meal after search'''
+    query = request.args.get('query')
+    results = get_data(query)
+    meal = None
+    for m in results:
+        if m['uri'].split("_")[-1] == str(meal_id):
+            meal = m
+            break
+    if not meal:
+        abort(404)
+    return render_template('smv.html', results=meal)
+"""
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")

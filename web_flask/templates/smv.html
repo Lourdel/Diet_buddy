@@ -21,77 +21,41 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 
 			<ul class="navbar">
-				<li><a href="#home">Home</a></li>
+				<li><a href="/">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</header>
     <main>
         <section class="inner">
-            <h2 id="rol">Rolex</h2>
-            <img src="https://th.bing.com/th/id/R.a5425de131a8aa132cecf6284e553d57?rik=PKL%2f04AxvRalUQ&pid=ImgRaw&r=0" alt="image" class="rolex">
+            <h2 id="rol">{{ results['label'] }}</h2>
+            <img src="{{ results['image'] }}" alt="image" class="rolex">
         </section>
         <section class="servings">
-                <div id="servings">SERVINGS:</div>
-                <div id="servings2">4</div>
-                <div id="calories">CALORIES:</div>
-                <div id="calories2">200</div>
-                <div id="prep">PREP:</div>
-                <div id="prep2">10 min</div>
-                <div id="cook">COOK:</div>
-                <div id="cook2">15 min</div>
-        </section>
-        <section class="quick">
-            <h4 id="fix">QUICK FIX, EAT HOT, TASTY</h4>
-            <p>
-                    A rolex is simillar to a vegetable omelet. Cabbage, tomato, and onion are cooked with eggs and then rolled into a chapati, a tortilla-like unleavened flatbred.
-            </p>
+		<div id="servings">Servings {{ results['servings'] }}</div>
+		<div id="servings">Preparation time {{ results['cook_time'] }} minutes</div>
+		<div id="calories">{{ results['calories'] }} calories</div>
+		<div id="calories">{{ results['carbs'] }}g carbs</div> 
+		<div id="calories">{{ results['fat'] }}g fat</div>
+		<div id="calories">{{ results['protein'] }}g protein</div>
         </section>
         <section class="table">
-          <h1 class="ing">INGREDIENTS</h1>
-            <table>
-                <thead ></thead>
-                <tbody>
-                  <tr>
-                    <td>Eggs</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <td>Onions</td>
-                    <td>1 small/half medium</td>
-                  </tr>
-                  <tr>
-                    <td>Tomatoes</td>
-                    <td>1 medium/half large</td>
-                  </tr>
-                  <tr>
-                    <td>Cooking oil</td>
-                    <td>2/3 teaspoons</td>
-                  </tr>
-                  <tr>
-                    <td>salt</td>
-                    <td>1 pinch</td>
-                  </tr>
-                  <tr>
-                    <td>chapati</td>
-                    <td>on request</td>
-                  </tr>
-                </tbody>
-              </table>
-              
+		<h1 class="ing">Ingredients</h1>
+		<ul>
+			{% for ingredient in  results['ingredients'] %}
+				<li>{{ ingredient }}</li>
+			{% endfor %}
+		</ul>
         </section>
-        <section class="inst">
-          <h3 id="ing">INSTRUCTIONS</h3>
-              <ol>
-                  <li>Chop the onions and tomatoes into small pieces.</li>
-                  <li>Heat oil in a pan and add the onions and tomatoes.</li>
-                  <li> Beat the eggs in a bowl and add salt to taste.</li>
-                  <li>Cook until the onions are translucent.</li>
-                  <li>Add the eggs to the pan and cook until the eggs are set.</li>
-                  <li>Roll the eggs into a chapati or tortilla.</li>
-                  <li>Enjoy</li>
-              </ol>
+	<section class="table">
+            <h1 class="ing">Nutrition Info</h1>
+            <ul>
+	    {% for nutrient, nutrient_data in results['nutrients'].items(): %}
+                <li>{{ nutrient_data['label'] }}: {{ nutrient_data['quantity'] }}{{ nutrient_data['unit'] }}</li>
+            {% endfor %}
+            </ul>
         </section>
+
     </main>
 </body>
 </html>

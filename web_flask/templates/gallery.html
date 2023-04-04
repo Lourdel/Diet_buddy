@@ -17,8 +17,8 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 
 			<ul class="navbar">
-				<li><a id="home" href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
+				<li><a id="home" href="/">Home</a></li>
+				<li><a href="{{ url_for('About') }}">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</header>
@@ -26,7 +26,9 @@
     <!--Create first search section-->
         <section class="search">
         <!--<button class="srch">search</button>-->
-            <input type="text" name="query" placeholder="Search........">
+		<form action="{{ url_for('search') }}" method="GET">
+    			<input type="text" name="query" placeholder="Search Meals">
+  		</form>
         </section>
 <!--Creating the main part of our page-->
         <main class="main">
@@ -37,7 +39,7 @@
 	    <section class="card">
             <div class="inner">
 			    <img src="{{ result['image'] }}" class="image"/>
-			    <h4 class="led"> {{ result['label'] }} </h4>
+			    <h4 class="led"><a href={{ url_for('meal_view', meal_id=result['uri']) }}> {{ result['label'] }} </a> </h4>
                 <!--<button>
                     <img src="https://assets.mockflow.com/app/wireframepro/svg/default/like%203.svg" class="lke" alt="like"/>
                 </button>-->
