@@ -19,7 +19,6 @@
 			<ul class="navbar">
 				<li><a href="#home">Home</a></li>
 				<li><a href="#about">About</a></li>
-				
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</header>
@@ -27,24 +26,21 @@
 
 
 		
-		<!--home start-->
+		<!-----home start-->
 		<section class="home" id="home">
 			<div class="home-text">
 				<h1>Recipe World</h1>
 				<h2>Most Precious Things</h2>
-				<p>Recipes are a testament to the human obsession with precision and creativity.
-					 From a simple home-cooked meal to an elaborate restaurant dish, 
-					 every recipe is crafted with meticulous attention to detail, 
-					 requiring precise measurements and instructions to create a delicious outcome. 
-					 But beyond the technicalities, recipes are also an expression of the 
-					 cultural diversity and culinary ingenuity that exists around the world. 
-					 Each recipe reflects the unique flavors, ingredients, and cooking techniques 
-					 of a particular region, and offers a glimpse into the rich history and traditions 
-					 of its people. <br>Whether you're a seasoned chef or a curious home cook,
-					the vast and diverse world of recipes can be a truly enriching and 
-					fulfilling experience.<br></p>
-				<form action="{{ url_for('search') }}" method="GET">
-					<input type="text" name="query" placeholder="Search query" style="font-size: 19px;">
+				<p>Recipes showcase both the precision and creativity of humans, 
+					from simple home-cooked meals to elaborate restaurant dishes. 
+					They require meticulous attention to detail and reflect the cultural diversity
+					and culinary ingenuity of different regions. Recipes offer a glimpse into 
+					the unique flavors, ingredients, and cooking techniques of a 
+					particular place, as well as the rich history and traditions of its people. 
+					Exploring the world of recipes can be a fulfilling experience for chefs and home cooks alike.				</p>
+				
+				<form action="{{ url_for('Simple_meals') }}" method="GET">
+					
 					<button type="submit" class="btn">Explore</button>
 				</form>
 	  
@@ -76,6 +72,23 @@
 					Our team consists of Najjib Mutyaba, Lourdel Kigudde, and Ian Kitembe - food enthusiasts who are passionate about sharing their love of good food with others. We are constantly updating our catalog of recipes to include a wide range of options, from healthy meals to decadent desserts and cocktails.
 					We believe that food should be enjoyed and celebrated, and we strive to create a community where people can come together to share their love of food and healthy living. We value your feedback and suggestions, so please don't hesitate to reach out to us with any comments or questions.
 					Thank you for choosing Dietbud as your resource for delicious and healthy recipes!</p>
+			</div>
+
+		</section>
+
+		<!--Contacts-->
+		<section class="contact" id="contact">
+
+			<div class="contact-text">
+				<span>Contact</span>
+				<h2>Team members <br> & Their Contacts <br> Don't call too late! </h2>
+				<p>Lourdel Kigudde, Najjib Mutyaba. Ian Kitembe</p>
+			</div>
+			
+			
+		</section>
+			<div class="contact-img">
+				<img src="../static/burger.jpg" height="580px">
 			</div>
 
 		</section>
