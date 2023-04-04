@@ -74,5 +74,11 @@ def search():
     results = get_data(query)
     return render_template('gallery.html', query=query, results=results)
 
+
+@app.route('/smv/<int:index>')
+def meal(index):
+    meal = results[index]  
+    return render_template('smv.html', meal=meal)
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")

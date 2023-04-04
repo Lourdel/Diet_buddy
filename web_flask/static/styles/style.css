@@ -1,8 +1,11 @@
 * {
-  padding: 5px;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
 }
 body {
 font-family: Arial, Helvetica, sans-serif;
@@ -178,7 +181,7 @@ transform: scale(1.05);
 
 /* CSS for the forth item */
 .img4 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -194,7 +197,7 @@ transform: scale(1.05);
 
 /* CSS for the fifth item */
 .img5 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -210,7 +213,7 @@ transform: scale(1.05);
 
 /* CSS for the sixth item */
 .img6 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -226,7 +229,7 @@ transform: scale(1.05);
 
 /* CSS for the seventh item */
 .img7 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -242,7 +245,7 @@ transform: scale(1.05);
 
 /* CSS for the eighth item */
 .img4 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -258,7 +261,7 @@ transform: scale(1.05);
 
 /* CSS for the nineth item */
 .img9 {
-display: flex
+display: flex;
 display: flex;
 flex-direction: column;
 justify-content: center;

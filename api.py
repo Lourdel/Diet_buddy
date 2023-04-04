@@ -31,6 +31,7 @@ for result in data["hits"]:
     recipe = result["recipe"]
     print(recipe["label"])
     print("Image: ", recipe["image"])
+    print("URI: ", recipe["uri"])
     print("URL: ", recipe["url"])
     print("Description: ", recipe["source"])
     print("\nIngredients:")
