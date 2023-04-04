@@ -17,16 +17,12 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 
 			<ul class="navbar">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				
+				<li><a href="/">Home</a></li>
+				<li><a href="{{ url_for('About') }}">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</header>
-		
 
-
-		
 		<!--home start-->
 		<section class="home" id="home">
 			<div class="home-text">
@@ -43,8 +39,7 @@
 					 of its people. <br>Whether you're a seasoned chef or a curious home cook,
 					the vast and diverse world of recipes can be a truly enriching and 
 					fulfilling experience.<br></p>
-				<form action="{{ url_for('search') }}" method="GET">
-					<input type="text" name="query" placeholder="Search query" style="font-size: 19px;">
+				<form action="{{ url_for('Simple_meals') }}" method="GET">
 					<button type="submit" class="btn">Explore</button>
 				</form>
 	  
