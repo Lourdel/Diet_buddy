@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title> DietBud Landing Page</title>
+		<link rel="stylesheet" type="text/css" href="../static/styles/landing.css" />
+		<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+			<a href="#" class="logo">dietbud</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+
+			<ul class="navbar">
+				<li><a id="home" href="/">Home</a></li>
+				<li><a href="{{ url_for('About') }}">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</header>
+
+    <!--Create first search section-->
+        <section class="search">
+        <!--<button class="srch">search</button>-->
+		<form action="{{ url_for('search') }}" method="GET">
+    			<input type="text" name="query" placeholder="Search Meals">
+  		</form>
+        </section>
+<!--Creating the main part of our page-->
+        <main class="main">
+            <!--Create sub sections for each item representation-->
+	    {% for result in results %}
+
+	
+	    <section class="card">
+            <div class="inner">
+			    <img src="{{ result['image'] }}" class="image"/>
+			    <h4 class="led">
+        			<a href="{{ url_for('meal_view', meal_id=result['uri']) }}"> {{ result['label'] }}</a>
+    			</h4>
+                <!--<button>
+                    <img src="https://assets.mockflow.com/app/wireframepro/svg/default/like%203.svg" class="lke" alt="like"/>
+                </button>-->
+            </div>
+        </section>
+	    {% endfor %}
+        </main>
+</body>
+</html>

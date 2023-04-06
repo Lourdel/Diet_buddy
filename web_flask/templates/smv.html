@@ -1,0 +1,59 @@
+<!--This is meta data that does not dispaly on our page but is useful for engines and identification-->
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Food Gallery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Yummy Food Gallery">
+        <meta name="keywords" content="yummy", "Food", "Gallery">
+	 <link rel="stylesheet" href="../static/styles/smv.css" />
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<!--Create a body section for our main page with the body tag-->
+<body>
+    <!--Started by creating a header section-->
+    <header>
+	<a href="#" class="logo">dietbud</a>
+		<div class="bx bx-menu" id="menu-icon"></div>
+			<ul class="navbar">
+				<li><a href="/">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+    </header>
+    <main>
+        <section class="inner">
+            <h2 id="rol">{{ results['label'] }}</h2>
+            <img src="{{ results['image'] }}" alt="image" class="rolex">
+        </section>
+        <section class="servings">
+		<div id="servings">Servings {{ results['servings'] }}</div>
+		<div id="servings">Ready time {{ results['cook_time'] }} minutes</div>
+		<div id="servings">calories {{ results['calories'] }}</div>
+		<div id="servings">carbs {{ results['carbs'] }}g</div> 
+		<div id="servings">fat {{ results['fat'] }}g</div>
+		<div id="servings">protein {{ results['protein'] }}g</div>
+        </section>
+        <section>
+		<h1 class="ing">Ingredients</h1>
+		<ul>
+			{% for ingredient in  results['ingredients'] %}
+				<li>{{ ingredient }}</li>
+			{% endfor %}
+		</ul>
+        </section>
+	<section class="table">
+            <h1 class="ing">Nutrition Info</h1>
+            <ul>
+            {% for nutrient, nutrient_data in results['nutrients'].items(): %}
+                <li>{{ nutrient_data['label'] }}: {{ nutrient_data['quantity'] }}{{ nutrient_data['unit'] }}</li>
+            {% endfor %}
+            </ul>
+            </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "gallery.html" %}
+{% block content %}
+<section class="card">
+  <div class="inner">
+	<h1>Search Results for "{{ query }}"</h1>
+	{% if results %}
+		{% for result in results %}
+			<h2>{{ result.label }}</h2>
+			{% if result.image %}
+				<img src="{{ result.image }}" alt="{{ result.label }}">
+			{% endif %}
+			{% if result.source %}
+				<p>From {{ result.source }}</p>
+			{% endif %}
+			{% if result.ingredients %}
+				<h3>Ingredients:</h3>
+				<ul>
+					{% for ingredient in result.ingredients %}
+						<li>{{ ingredient }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			<h3>Nutritional Facts:</h3>
+			{% if result.calories %}
+				<p>Calories per Serving: {{ result.calories|round(2) }}</p>
+			{% endif %}
+			{% if result.carbs %}
+				<p>Carbs per Serving: {{ result.carbs|round(2) }}</p>
+			{% endif %}
+			{% if result.fat %}
+				<p>Fat per Serving: {{ result.fat|round(2) }}</p>
+			{% endif %}
+			{% if result.protein %}
+				<p>Protein per Serving: {{ result.protein|round(2) }}</p>
+			{% endif %}
+			{% if result.health_labels %}
+				<h3>Health Labels:</h3>
+				<ul>
+					{% for label in result.health_labels %}
+						<li>{{ label }}</li>
+					{% endfor %}
+				</ul>
+                        {% endif %}
+		{% endfor %}
+	{% else %}
+		<p>No results found.</p>
+	{% endif %}
+	</div>
+  </section>
+{% endblock %}
