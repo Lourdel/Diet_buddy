@@ -18,10 +18,14 @@ def get_data(query):
         "q": query,
         "app_id": APP_ID,
         "app_key": APP_KEY,
-        "to": 20,
+        "to": 21,
     }
     response = requests.get(BASE_URL, params=params)
+    if response.status_code != 200:
+        raise Exception(f"API returned error code {response.status_code}")
     data = response.json()
+    if not data.get("hits"):
+        return []
     results = []
     for result in data["hits"]:
         recipe = result["recipe"]
@@ -97,21 +101,13 @@ def search():
     """Method to query for anything"""
     query = request.args.get('query')
     results = get_data(query)
-    return render_template('gallery.html', query=query, results=results)
-"""
+    return render_template('search.html', query=query, results=results)
+
 @app.route('/search/<string:meal_id>', strict_slashes=False)
 def search_meal(meal_id):
-    '''Method to display the details of a single meal after search'''
-    query = request.args.get('query')
-    results = get_data(query)
-    meal = None
-    for m in results:
-        if m['uri'].split("_")[-1] == str(meal_id):
-            meal = m
-            break
-    if not meal:
-        abort(404)
-    return render_template('smv.html', results=meal)
-"""
+    """Method to display the details of a single meal after search"""
+    results = get_data(meal_id)
+    return render_template('mv1.html', results=results)
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")
