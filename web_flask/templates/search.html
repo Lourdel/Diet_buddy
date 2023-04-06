@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title> DietBud Landing Page</title>
-		<link rel="stylesheet" type="text/css" href="../static/styles/landing.css" />
+        <link rel="stylesheet" type="text/css" href="../static/styles/landing.css" />
 		<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
             <div class="inner">
 			    <img src="{{ result['image'] }}" class="image"/>
 			    <h4 class="led">
-        			<a href="{{ url_for('meal_view', meal_id=result['uri']) }}"> {{ result['label'] }}</a>
+				<a href="{{ url_for('search_meal', meal_id=result['uri']) }}"> {{ result['label'] }}</a>
     			</h4>
                 <!--<button>
                     <img src="https://assets.mockflow.com/app/wireframepro/svg/default/like%203.svg" class="lke" alt="like"/>

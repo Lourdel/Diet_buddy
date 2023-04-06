@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Yummy Food Gallery">
         <meta name="keywords" content="yummy", "Food", "Gallery">
-	<link rel="stylesheet" href="../static/styles/landing.css" />
-	 <link rel="stylesheet" href="../static/styles/smv.css" />
+	 <link rel="stylesheet" href="../static/styles/landing.css" />
+        <link rel="stylesheet" href="../static/styles/smv.css" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,21 +29,21 @@
 		</header>
     <main>
         <section class="inner">
-            <h2 id="rol">{{ results['label'] }}</h2>
-            <img src="{{ results['image'] }}" alt="image" class="rolex">
+            <h2 id="rol">{{ results[0]['label'] }}</h2>
+            <img src="{{ results[0]['image'] }}" alt="image" class="rolex">
         </section>
         <section class="servings">
-		<div id="servings">Servings {{ results['servings'] }}</div>
-		<div id="servings">Preparation time {{ results['cook_time'] }} minutes</div>
-		<div id="calories">{{ results['calories'] }} calories</div>
-		<div id="calories">{{ results['carbs'] }}g carbs</div> 
-		<div id="calories">{{ results['fat'] }}g fat</div>
-		<div id="calories">{{ results['protein'] }}g protein</div>
+		<div id="servings">Servings {{ results[0]['servings'] }}</div>
+		<div id="servings">Preparation time {{ results[0]['cook_time'] }} minutes</div>
+		<div id="calories">{{ results[0]['calories'] }} calories</div>
+		<div id="calories">{{ results[0]['carbs'] }}g carbs</div> 
+		<div id="calories">{{ results[0]['fat'] }}g fat</div>
+		<div id="calories">{{ results[0]['protein'] }}g protein</div>
         </section>
         <section class="table">
 		<h1 class="ing">Ingredients</h1>
 		<ul>
-			{% for ingredient in  results['ingredients'] %}
+			{% for ingredient in  results[0]['ingredients'] %}
 				<li>{{ ingredient }}</li>
 			{% endfor %}
 		</ul>
@@ -51,11 +51,12 @@
 	<section class="table">
             <h1 class="ing">Nutrition Info</h1>
             <ul>
-            {% for nutrient, nutrient_data in results['nutrients'].items(): %}
+            {% for nutrient, nutrient_data in results[0]['nutrients'].items(): %}
                 <li>{{ nutrient_data['label'] }}: {{ nutrient_data['quantity'] }}{{ nutrient_data['unit'] }}</li>
             {% endfor %}
             </ul>
-            </section>
+	    </section>
+
     </main>
 </body>
 </html>
