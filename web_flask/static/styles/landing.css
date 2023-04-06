@@ -38,6 +38,7 @@ header {
     padding: 30px 170px;
     display: flex;
     background: var(--bg-color);
+    height: 80px;
 }
 
 .logo {
@@ -48,6 +49,7 @@ header {
 
 .navbar {
     display: flex;
+    margin-right: -90px;
 }
 
 .navbar a{
@@ -140,38 +142,42 @@ section {
 /*Class for the search section*/
 .search {
     margin-left: 27%;
-    margin-top: 80px;
+    margin-top: 50px;
     width: 200px;
     }
     input[type="text"] {
     width: 500px;
-    height: 10px;
+    height: 45px;
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: -20px;
     padding: 10px;
-    border-radius: 3px;
+    padding-left: 20px;
+    border-radius: 20px;
     border: 1px solid grey;
-    
-    
     }
     
     /* CSS for the main section */
     .main {
     display:flex;
     flex-wrap: wrap;
-    justify-content:space-between;
-    margin: 10px;
+    justify-content:flex-start;
+    margin: 5px;
+    margin-top: -80px;
+    width: 100%;
+    margin-left: -10px;
+    
     }
     .card {
-    width: 30%;
+    width: 450px;
     border-bottom: 60px;
-    margin-bottom: 40px;
+    margin-bottom: -30px;
+    margin-right: -20px;
     }
     
     
-    .mage {
+    .image {
     width: 320px;
-    height: 200px;
+    height: 250px;
     border-radius: 10px;
     }
     
@@ -191,6 +197,7 @@ section {
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    position: relative;
     }
     
     .inner:hover {
