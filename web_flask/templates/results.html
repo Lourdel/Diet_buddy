@@ -1,6 +1,8 @@
 {% extends "gallery.html" %}
 {% block content %}
-<h1>Search Results for "{{ query }}"</h1>
+<section class="card">
+  <div class="inner">
+	<h1>Search Results for "{{ query }}"</h1>
 	{% if results %}
 		{% for result in results %}
 			<h2>{{ result.label }}</h2>
@@ -43,4 +45,6 @@
 	{% else %}
 		<p>No results found.</p>
 	{% endif %}
+	</div>
+  </section>
 {% endblock %}

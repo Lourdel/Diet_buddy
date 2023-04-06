@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Yummy Food Gallery">
         <meta name="keywords" content="yummy", "Food", "Gallery">
-	<link rel="stylesheet" href="../static/styles/landing.css" />
 	 <link rel="stylesheet" href="../static/styles/smv.css" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +17,14 @@
 <body>
     <!--Started by creating a header section-->
     <header>
-			<a href="#" class="logo">dietbud</a>
-			<div class="bx bx-menu" id="menu-icon"></div>
-
+	<a href="#" class="logo">dietbud</a>
+		<div class="bx bx-menu" id="menu-icon"></div>
 			<ul class="navbar">
 				<li><a href="/">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
-		</header>
+    </header>
     <main>
         <section class="inner">
             <h2 id="rol">{{ results['label'] }}</h2>
@@ -34,13 +32,13 @@
         </section>
         <section class="servings">
 		<div id="servings">Servings {{ results['servings'] }}</div>
-		<div id="servings">Preparation time {{ results['cook_time'] }} minutes</div>
-		<div id="calories">{{ results['calories'] }} calories</div>
-		<div id="calories">{{ results['carbs'] }}g carbs</div> 
-		<div id="calories">{{ results['fat'] }}g fat</div>
-		<div id="calories">{{ results['protein'] }}g protein</div>
+		<div id="servings">Ready time {{ results['cook_time'] }} minutes</div>
+		<div id="servings">calories {{ results['calories'] }}</div>
+		<div id="servings">carbs {{ results['carbs'] }}g</div> 
+		<div id="servings">fat {{ results['fat'] }}g</div>
+		<div id="servings">protein {{ results['protein'] }}g</div>
         </section>
-        <section class="table">
+        <section>
 		<h1 class="ing">Ingredients</h1>
 		<ul>
 			{% for ingredient in  results['ingredients'] %}
