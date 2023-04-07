@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Yummy Food Gallery">
         <meta name="keywords" content="yummy", "Food", "Gallery">
-	 <link rel="stylesheet" href="../static/styles/landing.css" />
         <link rel="stylesheet" href="../static/styles/smv.css" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +33,11 @@
         </section>
         <section class="servings">
 		<div id="servings">Servings {{ results[0]['servings'] }}</div>
-		<div id="servings">Preparation time {{ results[0]['cook_time'] }} minutes</div>
-		<div id="calories">{{ results[0]['calories'] }} calories</div>
-		<div id="calories">{{ results[0]['carbs'] }}g carbs</div> 
-		<div id="calories">{{ results[0]['fat'] }}g fat</div>
-		<div id="calories">{{ results[0]['protein'] }}g protein</div>
+		<div id="servings">Ready time {{ results[0]['cook_time'] }} minutes</div>
+		<div id="servings">calories {{ results[0]['calories'] }} </div>
+		<div id="servings">carbs {{ results[0]['carbs'] }}g </div> 
+		<div id="servings">fat {{ results[0]['fat'] }}g </div>
+		<div id="servings">protein {{ results[0]['protein'] }}g </div>
         </section>
         <section class="table">
 		<h1 class="ing">Ingredients</h1>
