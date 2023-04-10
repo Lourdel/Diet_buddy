@@ -22,8 +22,8 @@
 
 			<ul class="navbar">
 				<li><a href="/">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="{{ url_for('contact') }}">Contact</a></li>
 			</ul>
 		</header>
     <main>
@@ -54,8 +54,13 @@
                 <li>{{ nutrient_data['label'] }}: {{ nutrient_data['quantity'] }}{{ nutrient_data['unit'] }}</li>
             {% endfor %}
             </ul>
-	    </section>
-
+	</section>
+	<section class="table">
+            <h1 class="ing">Directions on how to prepare</h1>
+            <ul class="links">
+                    <a href={{ results[0]['url'] }} target="_blank">Click me</a>
+            </ul>
+        </section>
     </main>
 </body>
 </html>
