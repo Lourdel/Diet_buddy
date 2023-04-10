@@ -132,7 +132,12 @@ header {
     font-weight: 100;
     color: orange;
   }
-
+.links{
+	font-weight: 80px;
+	color: blue;
+	padding-top: 0px;
+	margin-left: 8px;
+}
 .servings{
   display: flex;
   flex-direction: row;
