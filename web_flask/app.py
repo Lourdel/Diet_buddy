@@ -41,6 +41,7 @@ def get_data(query):
         protein = nutrients["PROCNT"]["quantity"] / servings
         health_labels = recipe['healthLabels']
         cook_time = recipe['totalTime']
+        url = recipe['url']
 
         results.append({
             'label': label,
@@ -54,7 +55,8 @@ def get_data(query):
             'uri': uri,
             'cook_time': cook_time,
             'servings': servings,
-            'nutrients': nutrients
+            'nutrients': nutrients,
+            'url': url
         })
     return results
 
@@ -67,6 +69,11 @@ def index():
 def About():
     """method to display the about route"""
     return render_template('about.html')
+
+@app.route('/contact',strict_slashes=False)
+def contact():
+    """method to display the contact route"""
+    return render_template('contact.html')
 
 @app.route('/simple_meals',strict_slashes=False)
 def Simple_meals():
